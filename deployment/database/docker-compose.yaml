@@ -1,0 +1,23 @@
+version: '3.8'
+networks:
+  sonarqube_demo_net:
+    driver: bridge
+volumes:
+  postgresql:
+  postgresql_data:
+
+services:
+  database:
+    image: postgres:12
+    container_name: database.$DOMAIN
+    environment:
+      POSTGRES_DB: $DB_DATABASE
+      POSTGRES_USER: $DB_USERNAME
+      POSTGRES_PASSWORD: $DB_PASSWORD
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+    ports:
+      - $DB_PORT:5432
+    networks:
+      - sonarqube_demo_net

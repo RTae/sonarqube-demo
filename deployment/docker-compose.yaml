@@ -1,0 +1,30 @@
+version: '3.8'
+networks:
+  sonarqube_demo_net:
+    driver: bridge
+
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  postgresql:
+  postgresql_data:
+
+services:
+  ## Persistence layer
+  # Database
+  database:
+    extends:
+      file: database/docker-compose.yaml
+      service: database
+    restart: always
+
+  ## Service layer
+  # SAST
+  sast:
+    extends:
+      file: sast/docker-compose.yaml
+      service: sast
+    restart: always
+    depends_on:
+      - database
