@@ -167,6 +167,7 @@ yarn.lock
 
 # OS
 .DS_Store
+worksapce/
 
 # Tests
 /coverage
