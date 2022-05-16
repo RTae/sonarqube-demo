@@ -1,6 +1,6 @@
 version: '3.8'
 networks:
-  dia_support_tools_dev_net:
+  sonarqube_demo_net:
     driver: bridge
 
 services:
@@ -17,4 +17,4 @@ services:
       - 80:80
       - 443:443
     networks:
-      - dia_support_tools_dev_net
+      - sonarqube_demo_net
