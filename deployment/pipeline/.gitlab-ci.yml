@@ -27,10 +27,10 @@ coverage-test:
     - yarn test:cov
   cache:
     paths:
-      - coverage/
+      - coverage/lcov.info
   artifacts:
     paths:
-      - coverage/
+      - coverage/lcov.info
     expire_in: 30 min
 
 sast-sonarqube:
