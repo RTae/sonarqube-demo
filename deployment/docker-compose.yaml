@@ -19,6 +19,15 @@ services:
       service: database
     restart: always
 
+  # Deployment layer
+  server:
+    extends:
+      file: proxy/docker-compose.yaml
+      service: server
+    restart: always
+    depends_on:
+      - sast
+
   ## Service layer
   # SAST
   sast:
@@ -28,3 +37,5 @@ services:
     restart: always
     depends_on:
       - database
+
+  
