@@ -11,13 +11,7 @@ unit-test:
     - '[ -f package-lock.json ] && rm package-lock.json'
     - yarn install
   script:
-    - yarn test:report
-  artifacts:
-    when: always
-    reports:
-      junit:
-        - backend/junit.xml
-    expire_in: 1 week
+    - yarn test
 
 coverage-test:
   stage: test
