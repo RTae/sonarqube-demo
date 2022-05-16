@@ -25,11 +25,12 @@ coverage-test:
     - yarn install
   script:
     - yarn test:cov
+  cache:
+    paths:
+      - coverage/
   artifacts:
     paths:
-      - build
-    reports:
-      junit: coverage/lcov.info
+      - coverage/
     expire_in: 30 min
 
 sast-sonarqube:
@@ -51,6 +52,5 @@ sast-sonarqube:
     paths:
       - .sonar/cache
   script: 
-    - ls
     - sonar-scanner
   allow_failure: true
