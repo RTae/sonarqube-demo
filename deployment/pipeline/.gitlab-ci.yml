@@ -29,7 +29,7 @@ coverage-test:
     paths:
       - build
     reports:
-      junit: coverage/clover.xml
+      junit: coverage/lcov.info
     expire_in: 30 min
 
 sast-sonarqube:
@@ -51,5 +51,6 @@ sast-sonarqube:
     paths:
       - .sonar/cache
   script: 
+    - ls
     - sonar-scanner
   allow_failure: true
