@@ -22,6 +22,7 @@ unit-test:
 coverage-test:
   stage: test
   image: node:16.14.2
+  needs: [unit-test]
   only:
     - main
   before_script:
@@ -44,6 +45,7 @@ sast-sonarqube:
   only:
     - main
   stage: test
+  needs: [coverage-test]
   environment: production
   variables:
     SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
