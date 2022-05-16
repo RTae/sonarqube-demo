@@ -32,11 +32,11 @@ coverage-test:
   script:
     - yarn test:cov
   artifacts:
-    when: always
+    paths:
+      - build
     reports:
-      junit:
-        - coverage/*
-    expire_in: 1 week
+      junit: coverage/clover.xml
+    expire_in: 30 min
 
 sast-sonarqube:
   image: 
