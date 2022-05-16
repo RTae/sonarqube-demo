@@ -69,7 +69,8 @@
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s",
-      "!**/node_modules/**"
+      "!**/node_modules/**",
+      "!/test/**"
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
