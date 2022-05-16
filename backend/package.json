@@ -68,7 +68,7 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "**/*.(t|j)s",
+      "src/**",
       "!**/node_modules/**"
     ],
     "coveragePathIgnorePatterns": [
