@@ -1,9 +1,31 @@
+stages:
+  - test
+
+unit-test_data-service:
+  stage: test
+  image: node:16.14.2
+  only:
+    - develop
+  before_script:
+    - cd backend
+    - '[ -f package-lock.json ] && rm package-lock.json'
+    - yarn install
+  script:
+    - yarn test:report
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - backend/junit.xml
+    expire_in: 1 week
+
 sonarqube-check:
   image: 
     name: sonarsource/sonar-scanner-cli:latest
     entrypoint: [""]
   only:
     - main
+  stage: test
   environment: production
   variables:
     SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
