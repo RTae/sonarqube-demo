@@ -1,7 +1,7 @@
 stages:
   - test
 
-unit-test_data-service:
+unit-test:
   stage: test
   image: node:16.14.2
   only:
@@ -19,7 +19,25 @@ unit-test_data-service:
         - backend/junit.xml
     expire_in: 1 week
 
-sonarqube-check:
+coverage-test:
+  stage: test
+  image: node:16.14.2
+  only:
+    - develop
+  before_script:
+    - cd backend
+    - '[ -f package-lock.json ] && rm package-lock.json'
+    - yarn install
+  script:
+    - yarn test:cov
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - coverage/*
+    expire_in: 1 week
+
+sast-sonarqube:
   image: 
     name: sonarsource/sonar-scanner-cli:latest
     entrypoint: [""]
