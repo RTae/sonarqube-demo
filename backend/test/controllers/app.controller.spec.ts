@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello Fishstop from CPE393!"', () => {
-      expect(appController.getHello()).toBe('Hello Fishstop from CPE393!');
+    it('should return "Hi Fishstop from CPE393!"', () => {
+      expect(appController.getHello()).toBe('Hi Fishstop from CPE393!');
     });
   });
 });
