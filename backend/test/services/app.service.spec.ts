@@ -13,8 +13,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appService.getHello()).toBe('Hello World!');
+    it('should return "Hi Fishstop from CPE393!!!"', () => {
+      expect(appService.getHello()).toBe('Hi Fishstop from CPE393!!!');
     });
   });
 });
