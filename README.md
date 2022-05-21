@@ -17,7 +17,7 @@ DB_PORT=<PORT>
 DOMAIN=<DOMAIN> # This variable can be anything, but not empty
 ```
 
-Next, you can create `.env` file by following script below.
+Next, you can create `.env` file by following a script below.
 
 ```
 cd ~/sonarqube-demo
@@ -26,7 +26,7 @@ nano nano deployment/.env
 ```
 2. Generate self-certificate for proxy server
 
-   Following that, this repository has a proxy server with SSL, so you need to generate a certificate which you can do by following the command below.
+   Following that, this repository has a proxy server with SSL, so you need to generate a certificate which you can do by following a command below.
 
 ```
 cd ~/sonarqube-demo/deployment/scripts
@@ -38,7 +38,7 @@ mv nginx-server.crt ~/sonarqube-demo/deployment/proxy/certs
 
 3. Start the service
 
-    In this step, you need to install [Docker](https://docs.docker.com/engine/install/ubuntu/) and [Docker compose](https://docs.docker.com/compose/install/) before running the script that shows below.
+    In this step, you need to install [Docker](https://docs.docker.com/engine/install/ubuntu/) and [Docker compose](https://docs.docker.com/compose/install/) before running a script that shows below.
 ```
 cd ~/sonarqube-demo
 
