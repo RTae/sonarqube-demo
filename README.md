@@ -36,7 +36,7 @@ mv nginx-server.key ~/sonarqube-demo/deployment/proxy/certs
 mv nginx-server.crt ~/sonarqube-demo/deployment/proxy/certs
 ```
 
-1. Start the service
+3. Start the service
 
     In this step, you need to install [Docker](https://docs.docker.com/engine/install/ubuntu/) and [Docker compose](https://docs.docker.com/compose/install/) before running the script that shows below.
 ```
